@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 12
+        versionName "1.0.12"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // maven配置
+        project.ext.mavenArtifactId = "bannerplayer"
+        project.ext.mavenVersionName = defaultConfig.versionName
+        //        project.ext.mavenIsRelease = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    
+    // glide
+    api 'com.github.bumptech.glide:glide:4.7.1'
+    // apache工具类
+    api 'org.apache.commons:commons-lang3:3.7'
+    // 切换布局
+    api 'com.github.licheedev:SlidableLayout:1.0.4.2h'
+    // 播放器
+    api 'tv.danmaku.ijk.media:ijkplayer-java:0.8.8'
+    api 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.8'
+    // 视频缓存
+    api 'com.danikula:videocache:2.7.0'
+}
+
+
+// 应用maven脚本
+apply from: '../jitpack.gradle'

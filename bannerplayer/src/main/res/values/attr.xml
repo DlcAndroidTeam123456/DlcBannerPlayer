@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PlayerBanner">
+        <attr name="banner_delay_time" format="integer" />
+        <attr name="banner_error_delay_time" format="integer" />
+        <attr name="banner_allow_scroll" format="boolean" />
+        <attr name="banner_title_background" format="color|reference" />
+        <attr name="banner_title_text_color" format="color" />
+        <attr name="banner_title_text_size" format="dimension" />
+        <attr name="banner_title_height" format="dimension" />
+        <attr name="banner_indicator_width" format="dimension" />
+        <attr name="banner_indicator_height" format="dimension" />
+        <attr name="banner_indicator_margin" format="dimension" />
+        <attr name="banner_indicator_drawable_selected" format="reference" />
+        <attr name="banner_indicator_drawable_unselected" format="reference" />
+        <attr name="banner_override_layout" format="reference" />
+        <attr name="banner_empty_image" format="reference" />
+        <attr name="banner_force_show_duration" format="boolean" />
+        <attr name="banner_override_image_scale" format="float" />
+        
+        <attr name="banner_image_scale_type" format="enum">
+            <enum name="center" value="0" />
+            <enum name="center_crop" value="1" />
+            <enum name="center_inside" value="2" />
+            <enum name="fit_center" value="3" />
+            <enum name="fit_end" value="4" />
+            <enum name="fit_start" value="5" />
+            <enum name="fit_xy" value="6" />
+            <enum name="matrix" value="7" />
+        </attr>
+    </declare-styleable>
+</resources>
